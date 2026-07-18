@@ -1,9 +1,9 @@
 :root {
-    --color-principal:#ffffff;
-    --color-secundario:#FECFD1;
-    --color-terciario:#FECFD1;
-    --font-principal:'Schoolbell', cursive;
-    --font-secundaria:'Nunito Sans', sans-serif;
+    --color-principal: #ffffff;
+    --color-secundario: #FECFD1;
+    --color-terciario: #FECFD1;
+    --font-principal: 'Schoolbell', cursive;
+    --font-secundaria: 'Nunito Sans', sans-serif;
 }
 
 body {
@@ -13,27 +13,26 @@ body {
     box-sizing: border-box;
     min-width: 320px;
     font-family: var(--font-principal);
-
 }
-/* Estilos para la flecha (colócalos aquí o en un archivo de estilos externo) */
+
+p {
+    padding: 0px;
+    margin: 0px;
+}
+
+/* Flecha de scroll to top */
 #scroll-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
     z-index: 9999;
-  }
-  
-  #scroll-to-top img {
-    width: 40px; /* Ajusta el tamaño según tu ícono */
+}
+#scroll-to-top img {
+    width: 40px;
     height: 40px;
     cursor: pointer;
-  }
-
-  
-p {
-    padding: 0px;
-    margin: 0px;
 }
+
 header {
     padding: auto;
     margin: auto;
@@ -49,16 +48,13 @@ header {
     justify-content: center;
     animation-name: texto;
     animation-duration: 5s;
+}
 
-}
 @keyframes texto {
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
+
 header .header-info {
     width: 100vw;
     height: 100%;
@@ -73,6 +69,7 @@ header .header-info {
     justify-content: center;
     flex-direction: column;
 }
+
 .infoimportante {
     width: 100vw;
     height: 40%;
@@ -82,16 +79,15 @@ header .header-info {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    gap: -3px;
     padding-bottom: 80px;
 }
 .infoimportante a {
     margin: 0px 0 0 0;
 }
-
 .infoimportante img {
     width: 60%;
 }
+
 .fecha {
     width: 100%;
     padding: auto;
@@ -99,7 +95,8 @@ header .header-info {
     align-items: center;
     justify-content: center;
 }
-/* TODO AUIDO */
+
+/* Audio */
 .audiodiv {
     position: fixed;
     top: 20px;
@@ -113,22 +110,16 @@ header .header-info {
     align-items: center;
     cursor: pointer;
     animation: bounce;
-    animation-duration:6s;
-    animation-iteration-count:300ms;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
 }
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-30px);
-    }
-    60% {
-        transform: translateY(-15px);
-    }
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
 }
 .audiodiv img {
-    padding: 6px  0 0 0;
+    padding: 6px 0 0 0;
     margin: 0;
     width: 60px;
     height: 60px;
@@ -141,66 +132,55 @@ header .header-info {
 }
 
 /* Ocultar los controles nativos del audio */
-audio::-webkit-media-controls {
-    display:none !important;
-}
-
-audio::-webkit-media-controls-panel {
-    display:none !important;
-}
-
-audio::-webkit-media-controls-play-button {
-    display:none !important;
-}
-
-audio::-webkit-media-controls-start-playback-button {
-    display:none !important;
-}
-
-audio::-webkit-media-controls-enclosure {
-    display:none !important;
-}
-
+audio::-webkit-media-controls,
+audio::-webkit-media-controls-panel,
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-start-playback-button,
+audio::-webkit-media-controls-enclosure,
 audio::-webkit-media-controls-current-time-display {
-    display:none !important;
+    display: none !important;
 }
 
-
-
-.boton {
+/* Botones: mismo tamaño para todos */
+.boton,
+.boton2 {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 200px;
+    font-size: 1rem;
+    line-height: 1.2;
+    white-space: nowrap;
     border: 1px solid var(--color-principal);
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 0px;
+    border-radius: 50px;
+}
+.boton {
     background-color: var(--color-terciario);
     color: var(--color-principal);
-    padding: 10px 30PX;
-    text-decoration: none;
-    margin-top:0px;
-    border-radius: 50px;
- }
- .boton:hover {
-     color: var(--color-terciario);
-     background-color: transparent;
-     border: 1px solid var(--color-terciario);
-     padding: 10px 30PX;
-     text-align: center;
-     text-decoration: none;
- }
- .boton2 {
+}
+.boton:hover {
+    color: var(--color-terciario);
+    background-color: transparent;
+    border: 1px solid var(--color-terciario);
+}
+.boton2 {
+    background-color: var(--color-principal);
+    color: var(--color-secundario);
+}
+.boton2:hover {
+    color: var(--color-principal);
+    background-color: transparent;
+    border: 1px solid var(--color-principal);
+}
+.segundo2 .boton2 {
     border: 1px solid var(--color-principal);
     background-color: var(--color-principal);
     color: var(--color-secundario);
-    padding: 10px 30PX;
-    text-decoration: none;
-    margin-top:0px;
-    border-radius: 50px;
- }
- .boton2:hover {
-     color: var(--color-principal);
-     background-color: transparent;
-     border: 1px solid var(--color-principal);
-     padding: 10px 30PX;
-     text-align: center;
-     text-decoration: none;
- }
+}
+
 .countdown {
     background-color: var(--color-principal);
     color: var(--color-terciario);
@@ -211,16 +191,16 @@ audio::-webkit-media-controls-current-time-display {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-family: 2em;
 }
 .countdown p {
-    font-size: 1.4em;
+    font-size: 1.6rem;
 }
 #clock {
-    font-size: 1.4rem; /* Cambia a un tamaño mayor si lo necesitas */
-    font-weight: lighter; /* Opcional, para hacerla más visible */
-    color:var(--color-terciario); /* Cambia el color si lo deseas */
-  }
+    font-size: 1.4rem;
+    font-weight: lighter;
+    color: var(--color-terciario);
+}
+
 main {
     width: 100%;
     height: auto;
@@ -233,64 +213,83 @@ main {
     text-align: center;
 }
 main .main-bloque {
-    padding: 30px 0 ;
+    padding: 30px 0;
 }
 main img {
     width: 60px;
 }
 main p {
+    color: #946646;
     padding: 6px 40px 30px 40px;
     max-width: 350px;
-    font-size: 1.2rem;
-    
+    font-size: 1.6rem;
 }
-.galeria {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-.galeria img {
-    width: 25vw;
-}
+
+.galeria,
 .galeria2 {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+.galeria img,
 .galeria2 img {
     width: 25vw;
 }
+
 .segundo {
     width: 100%;
-    height: 60vh;
+    height: 50vh;
     padding: 0;
     margin: 0;
-    color: var(--color-principal);
-    background-color: var(--color-terciario);
+    font-size: 1.4rem;
+    color: var(--color-terciario);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: bottom;    
+    background-position: bottom;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    
-    
 }
-.segundo img {
-    width: 89px;
+.corazon {
+    width: 30px;
+}
+.segundo h3 {
+    padding: 0;
+    margin: 0;
 }
 .segundo p {
     padding: 6px 40px;
     max-width: 500px;
-    font-size: 1.2Rem;
-    
+    font-size: 1.4rem;
 }
-.segundo img{
+.segundo .textomarron {
+    color: #946646;
+}
+.segundo img {
     width: 60px;
     padding-bottom: 10px;
 }
+
+.segundo2 {
+    width: 100%;
+    height: 50vh;
+    padding: 0;
+    font-size: 1.4rem;
+    margin: 0;
+    color: var(--color-principal);
+    background-color: var(--color-secundario);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
 .end {
     background-image: url(./img/madeira1.png);
     background-position: center;
@@ -301,8 +300,24 @@ main p {
     display: flex;
     justify-content: center;
     gap: 10px;
-    
 }
+.end img {
+    width: 60px;
+}
+.end h2 {
+    padding: 0;
+    margin: 0;
+    font-size: 2em;
+}
+.end h3 {
+    padding: 0;
+    margin: 0;
+    font-size: 1.2em;
+}
+.end .espejo {
+    transform: scaleX(-1);
+}
+
 .quote {
     background-color: var(--color-secundario);
     height: auto;
@@ -317,23 +332,7 @@ main p {
 .quote p {
     padding: 6px 40px;
     max-width: 500px;
-    font-size: 1.2Rem;
-}
-.end img {
-    width: 60px;
-}
-.end h2{
-    padding: 0;
-    margin: 0;
-    font-size: 2em;
-}
-.end h3{
-    padding: 0;
-    margin: 0;
-    font-size: 1.2em;
-}
-.end .espejo{
-    transform: scaleX(-1);
+    font-size: 1.4rem;
 }
 
 footer {
@@ -345,12 +344,11 @@ footer {
     padding: 40px 0;
     text-align: center;
 }
-footer .contenido{
+footer .contenido {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
 }
 footer img {
     width: 60px;
@@ -360,17 +358,7 @@ footer img {
     list-style: none;
     gap: 20px;
     padding: 0;
-
 }
-
-.contenido a {
-    color: var(--color-principal);
-}
-.contenido a:hover {
-    color: var(--color-secundario);
-}
-
-
 .contenido a {
     color: var(--color-principal);
 }
@@ -381,7 +369,7 @@ footer img {
 @media (max-width: 600px) {
     header {
         background-image: url(./img/backgroundphone.png);
-        background-size:cover;
+        background-size: cover;
     }
     main {
         width: 100%;
@@ -400,35 +388,36 @@ footer img {
         height: 80vh;
         max-width: 420px;
         margin: 30px 0 0 0;
-       
     }
     .infoimportante img {
         width: 70%;
     }
     .segundo {
-        background-color: var(--color-terciario);
-        background-image: url(./figuras/Group.png);
+        background-color: var(--color-principal);
         width: 100%;
-        height: 60vh;
-
+        height: 50vh;
     }
-    .fecha img{
-        margin:  0 0 10px 0;
+    .segundo2 {
+        width: 100%;
+        height: 50vh;
+        padding: 40px 0;
+    }
+    .fecha img {
+        margin: 0 0 10px 0;
         max-width: 96vw;
     }
     .galeria {
         width: 100%;
         display: grid;
-        grid-template-columns:1fr ;
+        grid-template-columns: 1fr;
     }
     .galeria img {
         width: 100vw;
     }
-
     .galeria2 {
         width: 100%;
         display: grid;
-        grid-template-columns:1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
     .galeria2 img {
         width: 50vw;
